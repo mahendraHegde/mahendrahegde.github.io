@@ -1,11 +1,12 @@
 
 import React, { Component } from 'react';
-import {Grid,CardMedia,Typography,withStyles,Slide,Paper} from '@material-ui/core/';
+import {Grid,CardMedia,IconButton,withStyles,Icon} from '@material-ui/core/';
 import PropTypes from 'prop-types';
 import ReactTypingEffect from 'react-typing-effect';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import image from '../img/me.jpeg'
+import classNames from "classnames";
+import image2 from '../img/me2.jpg'
 import MyAppBar from '../components/AppBar'
 const styles = theme => ({
   "@global":{
@@ -33,10 +34,12 @@ const styles = theme => ({
 },
 sectionHeading:{
   color:'#ba8003',
-  textDecoration: 'underline',
   fontFamily:'Impact',
   fontWeight:'bolder',
-  fontSize:20
+  fontSize:20,
+  [theme.breakpoints.up('md')]: {
+    fontSize:30,
+  }
 },
 corosel:{
   backgroundImage:`linear-gradient(to right bottom, #430089, #82ffa1)`,
@@ -44,23 +47,54 @@ corosel:{
   color:'white'
 },
 image:{
-  height: 400,
-  width: 300,
+  height: 450,
+  width: 350,
   margin: 20,
   textAlign: 'center',
   display: 'inline-block',
   borderRadius:5
 },
 headerText:{
-  fontSize:50,
+  fontSize:30,
+  fontWeight:800,
+  paddingLeft:20,
+  [theme.breakpoints.up('md')]: {
+    fontSize:50,
   fontWeight:900,
+  },
 },
 aboutText:{
-  fontSize:30,
-  fontWeight:900,
-  marginTop:50,
-  [theme.breakpoints.up('sm')]: {
-    marginTop:200
+  fontSize:20,
+  fontWeight:800,
+  marginTop:200,
+  padding:10,
+  [theme.breakpoints.up('md')]: {
+    fontSize:30,
+    fontWeight:900,
+  },
+},
+skillsText:{
+  fontSize:18,
+  fontWeight:700,
+  marginTop:20,
+  textAlign:'left',
+  '& ul' :{
+    listStyleType:'none',
+    '& li':{
+      padding:10
+    }
+   },
+   [theme.breakpoints.up('md')]: {
+    fontSize:22,
+    fontWeight:900,
+    paddingTop:90,
+  },
+  
+},
+largeIcon:{
+   fontSize: 30,
+   [theme.breakpoints.up('md')]: {
+    fontSize: 50,
   },
 },
 carousel:{
@@ -73,7 +107,7 @@ class Home extends Component{
     super(props)
     this.state={
       height : '0px',
-      selected:0,
+      selected:2,
       selectedGradient:0
     }
   }
@@ -83,8 +117,13 @@ class Home extends Component{
   updateSelected = (selected)=>{
     this.setState({selected})
   }
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setState({selected:0})
+    },500)
+  }
   render(){
-    const colors = [['#2C3E50','#FD746C'],['#0B486B','#F56217'],['#1D4350','#1D4350'],['#403A3E','#BE5869'],['#430089','#82ffa1']]
+    const colors = [['#2C3E50','#FD746C'],['#0B486B','#f8435f'],['#1D435f','#1D1150'],['#403A3E','#BE5869'],['#430089','#82ffa1']]
     const {classes} = this.props
 
     return(
@@ -96,7 +135,7 @@ class Home extends Component{
             container
             alignItems='center'
             >
-            <CardMedia xs={12} md={4} className={classes.image} image={image}  />
+            <CardMedia xs={12} md={4} className={classes.image}  image={image2}  />
             <Grid item md={2}></Grid>
               <ReactTypingEffect
                   xs={12} md={12}
@@ -113,15 +152,53 @@ class Home extends Component{
               alignItems='center'
             >
               <Grid item  xs={12} md={6} className={classes.aboutText}>
-                I'm an entusiastic and compentitve developer, love to solve any business challenge with technology.
+              I'm an enthusiastic and competitive developer, love to convert any complex business requirement to 1's and 0's.
               </Grid>  
             </Grid>      
-          </div><div style={{height:this.state.height}} className={classes.corosel}>
+          </div><div style={{paddingTop:40 ,height:this.state.height,backgroundImage:`linear-gradient(to right bottom, ${colors[2][0]}, ${colors[2][1]})`}} className={classes.corosel}>
           
-        o
-          </div><div style={{height:this.state.height}} className={classes.corosel}>
-          
-        op
+          <Grid
+              container
+              direction='column'
+              justify='center'
+              alignItems='center'
+            >
+              <Grid className={classes.skillsText} item  xs={12} md={6}>
+              <span className={classes.sectionHeading}>I can make your <b>life easier,</b></span>
+              <ul >
+              <li>Take some rest and allow me to develop Rest APIs.</li>
+              <li>It doesn't matter whether  SQL or NoSQL, I will CRUD it.</li>
+              <li>I can consume my REST APIs and can present it beautifully.</li>
+              <li>Want to runs things on mobiles? I'm here for you.</li>
+              <li>Bothered about platform differences? I'm here with Docker for you.</li>
+              <li>Sailing alone in the ocean of microservices? Let me help you with Kubernetes.</li>
+              <li>Looking for something else? no worries... let's tackle it together.</li>
+              </ul>
+              </Grid>  
+          </Grid>   
+          </div><div style={{paddingTop:40 ,height:this.state.height,backgroundImage:`linear-gradient(to right bottom, ${colors[3][0]}, ${colors[3][1]})`}} className={classes.corosel}>
+            <Grid
+                container
+                direction='column'
+                justify='center'
+                alignItems='center'
+              >
+                <Grid item  xs={12} md={6} className={classes.aboutText}>
+                Would like to know more about me? I'm available here  <Icon  className={classNames([classes.icon], 'fa fa-angle-double-down')} /> 
+                
+                </Grid>  
+                <Grid container justify='center' alignItems='center'>
+                <IconButton  fontSize='large' color="inherit">
+                  <a target='_blank' rel="noopener noreferrer" href='https://github.com/mahi1995/'>
+                    <Icon  className={classNames([classes.icon,classes.largeIcon], 'fa fa-github')} /> 
+                  </a>
+               </IconButton>
+               <IconButton color="inherit">
+                <a target='_blank' rel="noopener noreferrer" href='https://linkedin.com/in/mahendrahegde9/'>
+                <Icon fontSize="large" className={classNames([classes.icon,classes.largeIcon], 'fa fa-linkedin')} />  </a>
+               </IconButton>
+                </Grid>
+            </Grid>  
           </div>
         </Carousel>
       </Grid>

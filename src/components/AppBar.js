@@ -3,20 +3,18 @@ import PropTypes from 'prop-types';
 import "font-awesome/css/font-awesome.css";
 import classNames from "classnames";
 import AppBar from '@material-ui/core/AppBar';
-import {Toolbar,Avatar,Grid,Icon} from '@material-ui/core';
+import {Toolbar,Icon} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import {Mail} from '@material-ui/icons';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import image from '../img/me.jpeg'
+import SkillsIcon from '../icons/skills'
+import MeIcon from '../icons/me'
 
 const styles = theme => ({
   root: {
@@ -140,26 +138,24 @@ class MyAppBar extends React.Component {
             </IconButton>
 
             <IconButton color="inherit" onClick={()=>this.updateSelected(1)}>
-              <Icon className={classNames(classes.icon, 'fa fa-comment')} />   
+              <MeIcon />   
+            </IconButton>
+
+            <IconButton color="inherit" onClick={()=>this.updateSelected(2)}>
+             <SkillsIcon/>
+            </IconButton>
+            <IconButton fontSize='small' color="inherit" onClick={()=>this.updateSelected(3)}>
+                <Icon className={classNames(classes.icon, 'fa fa-plug')} />
+            </IconButton>
+            <IconButton fontSize='small' color="inherit">
+              <a target='_blank' rel="noopener noreferrer" href='https://github.com/mahi1995/'>
+                <Icon className={classNames(classes.icon, 'fa fa-github')} /> 
+              </a>      
+            </IconButton>
+            <IconButton color="inherit">
+              <a target='_blank' rel="noopener noreferrer" href='https://linkedin.com/in/mahendrahegde9/'><Icon className={classNames(classes.icon, 'fa fa-linkedin')} />  </a>
             </IconButton>
             
-              <IconButton fontSize='small' color="inherit">
-              <a target='_blank' href='https://github.com/mahi1995/'>
-                <Icon className={classNames(classes.icon, 'fa fa-github')} />   
-              </a>
-                            
-              </IconButton>
-              <IconButton color="inherit">
-              <a target='_blank' href='https://linkedin.com/in/mahendrahegde9/'><Icon className={classNames(classes.icon, 'fa fa-linkedin')} />  </a>
-              </IconButton>
-              <IconButton
-                aria-owns={isMenuOpen ? 'material-appbar' : undefined}
-                aria-haspopup="true"
-                onClick={this.handleProfileMenuOpen}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
             </div>
             <div className={classes.sectionMobile}>
               <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
