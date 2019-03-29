@@ -47,12 +47,13 @@ corosel:{
   color:'white'
 },
 image:{
-  height: 450,
-  width: 350,
+  height: 350,
+  width: 320,
   margin: 20,
-  textAlign: 'center',
-  display: 'inline-block',
-  borderRadius:5
+  borderRadius:5,
+  [theme.breakpoints.up('md')]: {
+    height: 450,
+  }
 },
 headerText:{
   fontSize:30,
@@ -99,6 +100,22 @@ largeIcon:{
 },
 carousel:{
   zIndex:0,
+},
+iconSpin: {
+  marginTop:50,
+ animation: 'icon-spin 0.9s infinite linear',
+ [theme.breakpoints.up('md')]: {
+      display: 'none',
+  },
+      
+},
+'@keyframes icon-spin': {
+  '0%': {
+      transform: 'translateY(20px)'
+  },
+  '100%': {
+      transform: 'translateY(40px)'
+  }
 }
 });
 
@@ -122,6 +139,9 @@ class Home extends Component{
       this.setState({selected:0})
     },500)
   }
+  goNext=()=>{
+    this.setState({selected:1})
+  }
   render(){
     const colors = [['#2C3E50','#FD746C'],['#0B486B','#f8435f'],['#1D435f','#1D1150'],['#403A3E','#BE5869'],['#430089','#82ffa1']]
     const {classes} = this.props
@@ -142,7 +162,9 @@ class Home extends Component{
                   className={classes.headerText}
                   text="Hi, I'm Mahendra"
               />
+              
             </Grid>
+            <Icon fontSize="large" className={classNames([classes.icon,classes.iconSpin], 'fa fa-sort-down')} /> 
           </div>
           <div style={{paddingTop:40 ,height:this.state.height,backgroundImage:`linear-gradient(to right bottom, ${colors[1][0]}, ${colors[1][1]})`}} className={classes.corosel}>
             <Grid
