@@ -18,20 +18,9 @@ const styles = theme => ({
       color:'inherit'
     }
   },
- 
-   root: {
+  root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  media: {
-  height: '30px',
-  paddingTop: '56.25%', // 16:9,
-  marginTop:'30'
-},
 sectionHeading:{
   color:'#ba8003',
   fontFamily:'Impact',
@@ -42,9 +31,12 @@ sectionHeading:{
   }
 },
 corosel:{
-  backgroundImage:`linear-gradient(to right bottom, #430089, #82ffa1)`,
-  borderRadius:'0 0 200px 0',
-  color:'white'
+  borderRadius:'0 0 80px 0',
+  [theme.breakpoints.up('md')]: {
+    borderRadius:'0 0 200px 0',
+  },
+  color:'white',
+  zIndex:0,
 },
 image:{
   height: 350,
@@ -54,6 +46,9 @@ image:{
   [theme.breakpoints.up('md')]: {
     height: 450,
   }
+},
+image2:{
+  transform :'scale'
 },
 headerText:{
   fontSize:30,
@@ -77,14 +72,30 @@ aboutText:{
 skillsText:{
   fontSize:18,
   fontWeight:700,
-  marginTop:20,
   textAlign:'left',
   '& ul' :{
     listStyleType:'none',
     '& li':{
-      padding:10
+      paddingTop:15,
+     
     }
    },
+   [theme.breakpoints.up('xs')]: {
+    fontSize:18,
+    fontWeight:500,
+    padding:10,
+    '& ul' :{
+      paddingLeft:0
+    }
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize:20,
+    fontWeight:500,
+    padding:10,
+    '& ul' :{
+      paddingLeft:5
+    }
+  },
    [theme.breakpoints.up('md')]: {
     fontSize:22,
     fontWeight:900,
@@ -98,14 +109,11 @@ largeIcon:{
     fontSize: 50,
   },
 },
-carousel:{
-  zIndex:0,
-},
 iconSpin: {
-  marginTop:50,
  animation: 'icon-spin 0.9s infinite linear',
  [theme.breakpoints.up('md')]: {
       display: 'none',
+      animation:'none'
   },
       
 },
@@ -125,7 +133,8 @@ class Home extends Component{
     this.state={
       height : '0px',
       selected:2,
-      selectedGradient:0
+      selectedGradient:0,
+      coroselClass:'classes.corosel'
     }
   }
   componentWillMount(){
@@ -139,9 +148,7 @@ class Home extends Component{
       this.setState({selected:0})
     },500)
   }
-  goNext=()=>{
-    this.setState({selected:1})
-  }
+ 
   render(){
     const colors = [['#2C3E50','#FD746C'],['#0B486B','#f8435f'],['#1D435f','#1D1150'],['#403A3E','#BE5869'],['#430089','#82ffa1']]
     const {classes} = this.props
@@ -149,7 +156,7 @@ class Home extends Component{
     return(
       <Grid>
         <MyAppBar updateSelected={this.updateSelected}/>
-        <Carousel axis="vertical" className={classes.carousel} showStatus={false} useKeyboardArrows={true}  showArrows={false} transitionTime={1000} selectedItem={this.state.selected} showThumbs={false} stopOnHover={true} showIndicators={false}>
+        <Carousel  axis="vertical" className={classes.corosel}  showStatus={false} useKeyboardArrows={true}  showArrows={false} transitionTime={1000} selectedItem={this.state.selected} showThumbs={false} stopOnHover={true} showIndicators={false}>
           <div style={{paddingTop:40,height:this.state.height,backgroundImage:`linear-gradient(to right bottom, ${colors[0][0]}, ${colors[0][1]})`}} className={classes.corosel}>
           <Grid
             container
