@@ -73,7 +73,7 @@ class MyAppBar extends React.Component {
                 <Icon className={classNames(classes.icon, 'fa fa-plug')} />
             </IconButton>
             <IconButton fontSize='small' color="inherit">
-              <a target='_blank' rel="noopener noreferrer" href='https://github.com/mahi1995/'>
+              <a target='_blank' rel="noopener noreferrer" href='https://github.com/mahendraHegde/'>
                 <Icon className={classNames(classes.icon, 'fa fa-github')} /> 
               </a>      
             </IconButton>
