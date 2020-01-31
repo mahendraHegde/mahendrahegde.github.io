@@ -218,7 +218,7 @@ class Home extends Component{
                 </Grid>  
                 <Grid container justify='center' alignItems='center'>
                 <IconButton  fontSize='large' color="inherit">
-                  <a target='_blank' rel="noopener noreferrer" href='https://github.com/mahi1995/'>
+                  <a target='_blank' rel="noopener noreferrer" href='https://github.com/mahendraHegde/'>
                     <Icon  className={classNames([classes.icon,classes.largeIcon], 'fa fa-github')} /> 
                   </a>
                </IconButton>
