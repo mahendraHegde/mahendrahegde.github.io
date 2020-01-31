@@ -1,1 +1,1 @@
-## development in progress
+Visit [link](https://mahendrahegde.github.io) to view my portfolio.
