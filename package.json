@@ -1,7 +1,7 @@
 {
   "name": "restaurants",
   "version": "0.1.0",
-  "homepage": "https://mahendrahegde.github.io/portfolio/",
+  "homepage": "https://mahendrahegde.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
