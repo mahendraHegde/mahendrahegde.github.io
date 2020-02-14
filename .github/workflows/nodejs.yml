@@ -21,7 +21,7 @@ jobs:
     - run: npm run build
       env:
         CI: true
-        PUBLIC_URL : ${{ format('https://{0}.github.io/{1}', ${{github.actor}},${{github.repository}})}} 
+        PUBLIC_URL : ${{ format('https://{0}.github.io/{1}', ${{ github.actor }},${{ github.repository }})}} 
     - run: echo "$PUBLIC_URL"
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
