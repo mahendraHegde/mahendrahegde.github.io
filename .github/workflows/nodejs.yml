@@ -21,6 +21,7 @@ jobs:
     - run: npm run build
       env:
         CI: true
+        PUBLIC_URL : https://github.com/mahendraHegde/portfolio
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
