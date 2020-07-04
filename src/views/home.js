@@ -6,7 +6,7 @@ import ReactTypingEffect from 'react-typing-effect';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import classNames from "classnames";
-import image2 from '../img/me2.jpg'
+import image2 from '../img/me.jpg'
 import MyAppBar from '../components/AppBar'
 const styles = theme => ({
   "@global":{
@@ -40,7 +40,7 @@ corosel:{
 },
 image:{
   height: 350,
-  width: 320,
+  width: 350,
   margin: 20,
   borderRadius:5,
   [theme.breakpoints.up('md')]: {
@@ -162,7 +162,7 @@ class Home extends Component{
             container
             alignItems='center'
             >
-            <CardMedia xs={12} md={4} className={classes.image}  image={image2}  />
+            <CardMedia xs={12} className={classes.image}  image={image2}  />
             <Grid item md={2}></Grid>
               <ReactTypingEffect
                   xs={12} md={12}
