@@ -8,7 +8,6 @@ import {
   useTheme,
 } from "@material-ui/core/";
 import { GitHub, LinkedIn, ExpandMore, DoubleArrow } from "@material-ui/icons";
-//import PropTypes from 'prop-types';
 import ReactTypingEffect from "react-typing-effect";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
