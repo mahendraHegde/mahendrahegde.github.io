@@ -1,110 +1,67 @@
 import React from "react";
-import "font-awesome/css/font-awesome.css";
-import classNames from "classnames";
-import AppBar from "@material-ui/core/AppBar";
-import { Toolbar, Icon, useTheme } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import PropTypes from "prop-types";
-import SkillsIcon from "../icons/skills";
-import MeIcon from "../icons/me";
-
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      width: "100%",
-      position: "absolute",
-      top: 20,
-      zIndex: 2,
-    },
-    grow: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginLeft: -12,
-      marginRight: 20,
-    },
-    title: {
-      display: "none",
-      [theme.breakpoints.up("sm")]: {
-        display: "block",
-      },
-    },
-    sectionDesktop: {
-      display: "none",
-      [theme.breakpoints.up("md")]: {
-        display: "flex",
-      },
-    },
-    sectionMobile: {
-      display: "flex",
-      [theme.breakpoints.up("md")]: {
-        display: "none",
-      },
-    },
-  })
-);
-
-function MyAppBar(props) {
-  const updateSelected = (selected) => {
-    props.updateSelected(selected);
-  };
-
-  const classes = useStyles(useTheme());
+import Utils from "../utils";
+import { Link } from "react-router-dom";
+const {
+  MENU_ITEMS,
+  THEME: { color },
+} = Utils;
+function AppBar() {
   return (
-    <div className={classes.root}>
-      <AppBar
-        style={{ background: "transparent", boxShadow: "none", zIndex: 2 }}
-        position="static"
-      >
-        <Toolbar>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton color="inherit" onClick={() => updateSelected(0)}>
-              <Icon className={classNames(classes.icon, "fa fa-home")} />
-            </IconButton>
-
-            <IconButton color="inherit" onClick={() => updateSelected(1)}>
-              <MeIcon />
-            </IconButton>
-
-            <IconButton color="inherit" onClick={() => updateSelected(2)}>
-              <SkillsIcon />
-            </IconButton>
-            <IconButton
-              fontSize="small"
-              color="inherit"
-              onClick={() => updateSelected(3)}
-            >
-              <Icon className={classNames(classes.icon, "fa fa-plug")} />
-            </IconButton>
-            <IconButton fontSize="small" color="inherit">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/mahendraHegde/"
+    <>
+      <div className="header">
+        <span>Mahendra(Logo)</span>
+        <ul className="menu">
+          {Object.values(MENU_ITEMS).map(({ text, id }, idx) => (
+            <Link to={id}>
+              <li
+                style={{
+                  ...(idx === 0 && { color: color.primary }),
+                }}
               >
-                <Icon className={classNames(classes.icon, "fa fa-github")} />
-              </a>
-            </IconButton>
-            <IconButton color="inherit">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://linkedin.com/in/mahendrahegde9/"
-              >
-                <Icon className={classNames(classes.icon, "fa fa-linkedin")} />{" "}
-              </a>
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+                {text}
+              </li>
+            </Link>
+            // <a
+            //   key={id}
+            //   onClick={(e) => {
+            //     let ele = document.getElementById(id);
+            //     e.preventDefault();
+            //     ele && ele.scrollIntoView({ behavior: "smooth", block: "end" });
+            //     window.history.pushState(id, id, "/#" + id);
+            //   }}
+            //   href={"/#" + id}
+            // >
+            //   <li>{text}</li>
+            // </a>
+          ))}
+        </ul>
+      </div>
+      <style jsx>
+        {`
+          .menu {
+            display: flex;
+            margin: auto;
+            width: 30vw;
+            flex-direction: row;
+          }
+          .menu li {
+            color: #868c94;
+            cursor: pointer;
+            padding-left: 15px;
+          }
+          .header {
+            height: 50px;
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0px;
+          }
+        `}
+      </style>
+    </>
   );
 }
 
-MyAppBar.propTypes = {
-  updateSelected: PropTypes.func.isRequired,
-};
-
-export default MyAppBar;
+export default AppBar;
