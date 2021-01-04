@@ -3,12 +3,12 @@ import {  Image, Navbar } from "react-bootstrap";
 import { FaFacebook, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import utils from "../../utils";
-const {SOCIAL_MEDIA} = utils;
+const {SOCIAL_MEDIA,DETAILS} = utils;
 const SOCIAL_ICON_SIZE = 20;
 const Sidebar = () => {
   return (
     <header className="header text-center">
-      <h3 className="mt-3"> Mahendra Hegde</h3>
+      <h3 className="mt-3"> {DETAILS.name}</h3>
       <Navbar bg="primary" fluid variant="dark" expand="lg">
         <Navbar.Toggle  style={{marginTop:"-60px"}} />
         <Navbar.Collapse className="flex-column"  id="basic-navbar-nav">
@@ -20,7 +20,7 @@ const Sidebar = () => {
             className="mb-3 mx-auto"
             style={{maxWidth:"160px"}}
           />
-          <div className="bio mb-3">Hi, my name is Mahendra Hegde and I'm a software engineer. Welcome to my personal website!</div>
+          <div className="bio mb-3"> {DETAILS.shrotAbout} </div>
           <ul className="social-list list-inline py-2 mx-auto">
             <li className="list-inline-item">
               <a

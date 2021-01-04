@@ -10,6 +10,12 @@ body {
   overflow: hidden;
   color: white;
 }
+ul,
+li,
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
 hr{
   border: 0;
   width: 90%;
@@ -85,9 +91,24 @@ hr{
   padding: 2px;
   margin-left: 3px;
 }
-ul,
-li,
-a {
-  list-style-type: none;
-  text-decoration: none;
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+.media-body{
+  flex: 1;
+}
+.profile-teaser{
+  color: #292929;
+}
+.profile-teaser .name {
+  font-size: 3rem;
+}
+.profile-teaser .designation {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.bio{
+  font-size: 1rem;
+  font-weight: 300;
 }

@@ -9,14 +9,12 @@ import Layout from "./components/Layout";
 class App extends Component {
   render() {
     return (
-      <div>
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
           </Switch>
         </Layout>
-      </div>
     );
   }
 }
