@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
-  color: white;
+  color: black;
 }
 ul,
 li,
@@ -91,13 +91,6 @@ hr{
   padding: 2px;
   margin-left: 3px;
 }
-.media {
-  display: flex;
-  align-items: flex-start;
-}
-.media-body{
-  flex: 1;
-}
 .profile-teaser{
   color: #292929;
 }
@@ -111,4 +104,9 @@ hr{
 .bio{
   font-size: 1rem;
   font-weight: 300;
+}
+.section-title {
+  font-size: 2rem;
+  color: #292929;
+  border-left: 5px solid $primary;
 }

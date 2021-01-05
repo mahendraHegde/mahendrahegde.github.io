@@ -2,18 +2,18 @@ import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 import Utils from "../utils/index";
-import Layout from "../components/Layout";
-import { Button, Container } from "react-bootstrap";
+import { Button, Row, Container, Col } from "react-bootstrap";
 import IconButton from "../components/IconButton";
+import SectionHeader from "../components/SectionHeader";
 
 const { DETAILS } = Utils;
 
 export default function Home() {
   return (
-    <Container>
-      <div className="profile-teaser media flex-column flex-lg-row">
-        <div className="profile-teaser-body">
-          <h2 className="name font-weight-bold mb-1">{DETAILS.name}</h2>
+    <Container className="p-lg-5 mx-lg-5" fluid>
+      <Row className="profile-teaser mx-lg-4 justify-content-space-between">
+        <Col lg="7">
+          <h2 className="name mb-1">{DETAILS.name}</h2>
           <div className="designation mb-3">{DETAILS.designation}</div>
           <div className="bio mb-4">{DETAILS.about}</div>
           <div className="mb-4">
@@ -33,8 +33,17 @@ export default function Home() {
               View Resume
             </IconButton>
           </div>
-        </div>
-      </div>
+        </Col>
+        {/* <Col xs="12" lg="5"></Col> */}
+      </Row>
+      <Row className="mx-lg-4 justify-content-center mt-3">
+        <Col>
+          <SectionHeader>What I Do?</SectionHeader>
+        </Col>
+      </Row>
+      <Row className="mt-3 mx-lg-4">
+        <Col>{DETAILS.about}</Col>
+      </Row>
     </Container>
   );
 }
