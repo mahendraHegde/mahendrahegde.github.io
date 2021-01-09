@@ -40,7 +40,7 @@ function Interaction({ className, emoji, sideContent, head }) {
 }
 
 export default Interaction;
-Interaction.prototype = {
+Interaction.propTypes = {
   className: PropTypes.string,
   emoji: PropTypes.string,
   sideContent: PropTypes.string,

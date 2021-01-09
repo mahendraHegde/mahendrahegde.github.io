@@ -29,8 +29,8 @@ function Layout({ children }) {
   );
 }
 
-export default Layout;
-
-Layout.prototype = {
+Layout.propTypes = {
   children: PropTypes.node,
 };
+
+export default Layout;

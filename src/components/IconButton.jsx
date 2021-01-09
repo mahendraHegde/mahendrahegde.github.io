@@ -15,7 +15,7 @@ function IconButton({ variant, classes, children, icon, to }) {
 }
 
 export default IconButton;
-IconButton.prototype = {
+IconButton.propTypes = {
   variant: PropTypes.string,
   classes: PropTypes.string,
   children: PropTypes.any,
