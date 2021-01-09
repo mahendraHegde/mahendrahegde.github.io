@@ -8,7 +8,8 @@ function SectionHeader({ children }) {
   );
 }
 
-export default SectionHeader;
-SectionHeader.prototype = {
-  children: PropTypes.array,
+SectionHeader.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.node),
 };
+
+export default SectionHeader;
