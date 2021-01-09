@@ -1,13 +1,18 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-function skilll({ icons, title, desc }) {
+import PropTypes from "prop-types";
+function Skill({ icons, title, desc }) {
   return (
     <Container className="py-3" fluid>
       <Row className="justify-content-start">
-        {icons.map(({color,icon:Icon})=><Col xs="2" style={{color}} className="skill-icon my-1"><Icon className="float-left"/></Col>)}
+        {icons.map(({ color, icon: Icon }) => (
+          <Col key={Icon} xs="2" style={{ color }} className="skill-icon my-1">
+            <Icon className="float-left" />
+          </Col>
+        ))}
       </Row>
       <Row>
-        <Col className="skill-title my-1" >{title}</Col>
+        <Col className="skill-title my-1">{title}</Col>
       </Row>
       <Row>
         <Col className="skill-desc my-1">{desc}</Col>
@@ -16,4 +21,10 @@ function skilll({ icons, title, desc }) {
   );
 }
 
-export default skilll;
+export default Skill;
+
+Skill.propTypes = {
+  icons: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string,
+  desc: PropTypes.string,
+};

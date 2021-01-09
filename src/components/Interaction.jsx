@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Emoji from "./Emoji";
 function Interaction({ className, emoji, sideContent, head }) {
   return (
@@ -39,3 +40,9 @@ function Interaction({ className, emoji, sideContent, head }) {
 }
 
 export default Interaction;
+Interaction.prototype = {
+  className: PropTypes.string,
+  emoji: PropTypes.string,
+  sideContent: PropTypes.string,
+  head: PropTypes.string,
+};
