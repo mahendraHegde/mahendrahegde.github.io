@@ -7,8 +7,8 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
   color: black;
+  overflow-x: hidden;
 }
 ul,
 li,
@@ -21,39 +21,16 @@ hr{
   width: 90%;
   border-top: 0.5px solid white;
 }
-.container {
-  display: flex;
-  align-items: space-between;
-  // background-image: url("../img/dev.svg");
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: right;
-  background-size: contain;
-  height: 100vh;
-  width: 100%;
-}
 .header {
-  position: fixed;
-  left: 0;
-  top: 0;
   height: 100vh;
-  width: 280px;
   background: #54b689;
   color: #fff;
   overflow-y: auto;
   scrollbar-color: rgba(0, 0, 0, 0.2) #54b689;
   scrollbar-width: thin;
 }
-@media (max-width: 991.98px) {
-  .header {
-    position: static;
-    width: inherit;
-    height: auto;
-  }
-}
 .btn {
   font-weight: bold;
-  padding: 0.375rem 1rem;
   height: 2.5rem;
   transition: all 0.4s ease-in-out;
   font-size: 1rem;
@@ -109,4 +86,32 @@ hr{
   font-size: 2rem;
   color: #292929;
   border-left: 5px solid $primary;
+}
+.theme-bg-light{
+ background:  #fafafa !important
+}
+.skill-icon {
+  font-size: 1.875rem;
+}
+.skill-icon img{
+  width: 1.875rem;
+  height: 1.875rem;
+}
+.skill-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.skill-desc{
+    color: #4f4f4f;
+    font-size: 0.875rem;
+}
+
+//media queries
+@media (max-width: 991.98px) {
+  .header {
+    height: auto;
+  }
+  .profile-teaser .name {
+    font-size: 2.4rem;
+  }
 }

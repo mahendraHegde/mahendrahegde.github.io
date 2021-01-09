@@ -3,10 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./views/home";
 import About from "./views/about";
 import "./styles/index.scss";
-
 import Layout from "./components/Layout";
-import { Container,Row,Col } from "react-bootstrap";
-
 function App() {
   return (
     <Layout>
