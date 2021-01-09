@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Col, Container, Row } from "react-bootstrap";
 import { GrInProgress } from "react-icons/gr";
 function WIP({ startTime, delay }) {
@@ -6,7 +7,9 @@ function WIP({ startTime, delay }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setRemaining(
-        Math.round((delay+1000)/1000  - (Date.now() / 1000 - startTime / 1000))
+        Math.round(
+          (delay + 1000) / 1000 - (Date.now() / 1000 - startTime / 1000)
+        )
       );
     }, 1000);
     return () => clearInterval(interval);
@@ -21,7 +24,7 @@ function WIP({ startTime, delay }) {
       <Row className="justify-content-center">
         <Col className="col-auto">
           <h3>
-            Its a Work in Progress.Feel free to vist though. You will be
+            Its a Work in Progress.Feel free to visit though. You will be
             redirected in {remaining}
           </h3>
         </Col>
@@ -31,3 +34,7 @@ function WIP({ startTime, delay }) {
 }
 
 export default WIP;
+WIP.propTypes = {
+  startTime: PropTypes.number,
+  delay: PropTypes.number,
+};

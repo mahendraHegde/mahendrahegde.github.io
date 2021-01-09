@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import PropTypes from "prop-types";
 import Sidebar from "./leftbar";
 import WIP from "./WIP";
 
 function Layout({ children }) {
   const [loading, setLoading] = useState(true);
-  const delay = 4000
+  const delay = 4000;
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, delay);
   }, []);
   if (loading) {
-    return <WIP startTime={Date.now()} delay={delay}/>
+    return <WIP startTime={Date.now()} delay={delay} />;
   }
   return (
     <Container className="m-0 p-0" fluid>
@@ -29,3 +30,7 @@ function Layout({ children }) {
 }
 
 export default Layout;
+
+Layout.prototype = {
+  children: PropTypes.node,
+};

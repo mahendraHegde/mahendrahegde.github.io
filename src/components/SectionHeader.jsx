@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 function SectionHeader({ children }) {
   return (
     <div className="section-title pl-3">
@@ -8,3 +9,6 @@ function SectionHeader({ children }) {
 }
 
 export default SectionHeader;
+SectionHeader.prototype = {
+  children: PropTypes.array,
+};
