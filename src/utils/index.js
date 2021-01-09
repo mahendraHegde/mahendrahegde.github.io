@@ -28,3 +28,4 @@ export default {
   THEME,
   DETAILS
 };
+//{color:"#62D4FA",icon:()=><img src={require("../img/golang.svg")}/>}
