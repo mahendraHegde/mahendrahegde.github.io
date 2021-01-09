@@ -4,6 +4,7 @@ import { FaFacebook, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { Link } from "react-router-dom";
 import utils from "../../utils";
+import meImg from "../../img/me.jpg";
 const { SOCIAL_MEDIA, DETAILS } = utils;
 const SOCIAL_ICON_SIZE = 20;
 const Sidebar = () => {
@@ -16,8 +17,8 @@ const Sidebar = () => {
         <Navbar.Toggle style={{ marginTop: "-60px" }} />
         <Navbar.Collapse className="flex-column" id="basic-navbar-nav">
           <Image
-            src={require("../../img/me.jpg")}
-            alt="mahenadr hegde"
+            src={meImg}
+            alt={DETAILS.name}
             fluid
             roundedCircle
             className="mb-3 mx-auto"

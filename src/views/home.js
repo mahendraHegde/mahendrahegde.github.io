@@ -17,6 +17,7 @@ import { Image, Row, Container, Col } from "react-bootstrap";
 import IconButton from "../components/IconButton";
 import SectionHeader from "../components/SectionHeader";
 import Skill from "../components/Skill";
+import meImg from "../img/me2.jpg";
 
 const { DETAILS } = Utils;
 
@@ -46,11 +47,7 @@ export default function Home() {
           </Row>
         </Col>
         <Col xs="12" lg="5">
-          <Image
-            style={{ maxHeight: 300 }}
-            fluid
-            src={require("../img/me2.jpg")}
-          />
+          <Image style={{ maxHeight: 300 }} fluid src={meImg} />
         </Col>
       </Row>
       <Row className="mx-lg-4 mt-3">
