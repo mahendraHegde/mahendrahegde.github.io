@@ -1,8 +1,10 @@
 import React from "react";
-import { Row, Container, Col, Form, Button, Spinner } from "react-bootstrap";
+import { Row, Container, Col, Form } from "react-bootstrap";
+import { RiMailSendLine } from "react-icons/ri";
 import { useState } from "react";
 import Toast from "../components/Toast";
 import SocialRow from "../components/SocialRow";
+import IconSpinnerButton from "../components/IconSpinnerButton";
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
@@ -138,15 +140,13 @@ export default function Contact() {
             </Form.Group>
           </Form.Row>
           <Form.Row className="justify-content-end pr-md-5 mr-md-5 mt-2">
-            <Button type="submit">
-              {sending ? (
-                <Spinner animation="border" role="status">
-                  <span className="sr-only">Loading...</span>
-                </Spinner>
-              ) : (
-                "Send"
-              )}
-            </Button>
+            <IconSpinnerButton
+              buttonProps={{ type: "submit" }}
+              showSpinner={sending}
+              icon={RiMailSendLine}
+            >
+              send
+            </IconSpinnerButton>
           </Form.Row>
         </Form>
         <Toast
