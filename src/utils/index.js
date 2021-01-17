@@ -1,9 +1,3 @@
-const SOCIAL_MEDIA = {
-  github: "https://github.com/mahendraHegde",
-  linkedIn: "https://www.linkedin.com/in/mahendrahegde9/",
-  gmail: "mailto:hegdemahendra9@gmail.com",
-  fb: "https://www.facebook.com/hegdemahendra9/",
-};
 const THEME = {
   color: {
     bg: "#EDF2F8",
@@ -18,7 +12,6 @@ const DETAILS = {
   intro: `I have more than 3 years' experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my online resume and project portfolio.`,
 };
 export default {
-  SOCIAL_MEDIA,
   THEME,
   DETAILS,
 };

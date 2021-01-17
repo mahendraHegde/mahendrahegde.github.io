@@ -1,5 +1,10 @@
 import { IoIosContact } from "react-icons/io";
-import { SiMinutemailer, SiJavascript, SiKubernetes } from "react-icons/si";
+import {
+  SiMinutemailer,
+  SiJavascript,
+  SiKubernetes,
+  SiGmail,
+} from "react-icons/si";
 import {
   FaNodeJs,
   FaReact,
@@ -9,6 +14,9 @@ import {
   FaGitlab,
   FaDocker,
   FaSass,
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
 } from "react-icons/fa";
 import Home from "../views/home";
 import Contact from "../views/contact";
@@ -86,3 +94,34 @@ export const SKILLS = [
       "I achieve continuous integration and continuous deployment with gitlab",
   },
 ];
+const SOCIAL_ICON_SIZE = 20;
+export const SOCIAL_MEDIA = {
+  github: {
+    link: "https://github.com/mahendraHegde",
+    icon: {
+      Icon: FaGithub,
+      style: { color: "gray", fontSize: SOCIAL_ICON_SIZE },
+    },
+  },
+  linkedIn: {
+    link: "https://www.linkedin.com/in/mahendrahegde9/",
+    icon: {
+      Icon: FaLinkedin,
+      style: { color: "#0e76a8", fontSize: SOCIAL_ICON_SIZE },
+    },
+  },
+  gmail: {
+    link: "mailto:hegdemahendra9@gmail.com",
+    icon: {
+      Icon: SiGmail,
+      style: { color: "#D44638", fontSize: SOCIAL_ICON_SIZE },
+    },
+  },
+  fb: {
+    link: "https://www.facebook.com/hegdemahendra9/",
+    icon: {
+      Icon: FaFacebook,
+      style: { color: "#3b5998", fontSize: SOCIAL_ICON_SIZE },
+    },
+  },
+};

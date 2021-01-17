@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Container, Col, Form, Button, Spinner } from "react-bootstrap";
 import { useState } from "react";
 import Toast from "../components/Toast";
+import SocialRow from "../components/SocialRow";
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
@@ -52,7 +53,7 @@ export default function Contact() {
   return (
     <>
       <Container className="py-lg-5 theme-bg-light" fluid>
-        <Row className="">
+        <Row>
           <Col xs="12">
             <Row>
               <Col>
@@ -61,13 +62,25 @@ export default function Contact() {
             </Row>
             <Row>
               <Col>
-                <div className="bio mb-4 text-center">
+                <div className="bio mb-1 text-center">
                   Interested in hiring me for your project or just want to say
                   hi? You can fill in the contact form below, i&apos;ll get in
                   touch with you shortly.
                 </div>
               </Col>
             </Row>
+          </Col>
+        </Row>
+        <Row className="text-center">
+          <Col xs="12">
+            <div className="bio mb-2 text-center">
+              Want to get connected? Follow me on the social channels below.
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="d-flex justify-content-center" xs="12">
+            <SocialRow style={{ background: "none" }} />
           </Col>
         </Row>
       </Container>
