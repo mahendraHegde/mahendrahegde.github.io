@@ -3,10 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import PropTypes from "prop-types";
 import Sidebar from "./leftbar";
 import WIP from "./WIP";
+import Footer from "./Footer";
 
 function Layout({ children }) {
   const [loading, setLoading] = useState(true);
-  const delay = 4000;
+  const delay = 0;
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -22,7 +23,8 @@ function Layout({ children }) {
           <Sidebar />
         </Col>
         <Col xs="12" md="10">
-          {children}
+          <Row>{children}</Row>
+          <Footer />
         </Col>
       </Row>
     </Container>

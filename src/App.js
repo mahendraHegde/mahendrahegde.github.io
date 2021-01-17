@@ -1,15 +1,15 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./views/home";
-import About from "./views/about";
+import { MENU_ITEMS } from "./utils/dom-utils";
 import "./styles/index.scss";
 import Layout from "./components/Layout";
 function App() {
   return (
     <Layout>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
+        {Object.values(MENU_ITEMS).map(({ link, component }) => (
+          <Route key={link} exact path={link} component={component} />
+        ))}
       </Switch>
     </Layout>
   );
