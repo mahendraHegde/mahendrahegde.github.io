@@ -1,14 +1,12 @@
 import React from "react";
 import { Image, Navbar } from "react-bootstrap";
-import { FaFacebook, FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
 import { Link, useLocation } from "react-router-dom";
 // import PropTypes from "prop-types";
 import utils from "../../utils";
 import { MENU_ITEMS } from "../../utils/dom-utils";
 import meImg from "../../img/me.jpg";
-const { SOCIAL_MEDIA, DETAILS } = utils;
-const SOCIAL_ICON_SIZE = 20;
+import SocialRow from "../SocialRow";
+const { DETAILS } = utils;
 const Sidebar = () => {
   const { pathname } = useLocation();
   return (
@@ -28,49 +26,7 @@ const Sidebar = () => {
             style={{ maxWidth: "160px" }}
           />
           <div className="bio mb-3"> {DETAILS.shrotAbout} </div>
-          <ul className="social-list list-inline py-2 mx-auto">
-            <li className="list-inline-item">
-              <a
-                href={SOCIAL_MEDIA.github}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <FaGithub
-                  style={{ color: "gray", fontSize: SOCIAL_ICON_SIZE }}
-                />
-              </a>
-            </li>
-            <li className="list-inline-item">
-              <a
-                rel="noopener noreferrer"
-                href={SOCIAL_MEDIA.linkedIn}
-                target="_blank"
-              >
-                <FaLinkedinIn
-                  style={{ color: "#0e76a8", fontSize: SOCIAL_ICON_SIZE }}
-                />
-              </a>
-            </li>
-
-            <li className="list-inline-item">
-              <a rel="noopener noreferrer" href={SOCIAL_MEDIA.gmail}>
-                <SiGmail
-                  style={{ color: "#D44638", fontSize: SOCIAL_ICON_SIZE }}
-                />
-              </a>
-            </li>
-            <li className="list-inline-item">
-              <a
-                rel="noopener noreferrer"
-                href={SOCIAL_MEDIA.fb}
-                target="_blank"
-              >
-                <FaFacebook
-                  style={{ color: "#3b5998", fontSize: SOCIAL_ICON_SIZE }}
-                />
-              </a>
-            </li>
-          </ul>
+          <SocialRow />
           <hr />
           <ul className="navbar-nav flex-column text-left">
             {Object.values(MENU_ITEMS).map(
