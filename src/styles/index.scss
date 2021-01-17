@@ -16,7 +16,10 @@ a {
   list-style-type: none;
   text-decoration: none;
 }
-hr{
+a:hover {
+  text-decoration: none;
+}
+hr {
   border: 0;
   width: 90%;
   border-top: 0.5px solid white;
@@ -60,7 +63,7 @@ hr{
 .bio {
   font-size: 0.875rem;
 }
-.social-list li{
+.social-list li {
   background-color: white;
   border-radius: 100%;
   width: 30px;
@@ -68,7 +71,7 @@ hr{
   padding: 2px;
   margin-left: 3px;
 }
-.profile-teaser{
+.profile-teaser {
   color: #292929;
 }
 .profile-teaser .name {
@@ -78,7 +81,7 @@ hr{
   font-size: 1.5rem;
   font-weight: 300;
 }
-.bio{
+.bio {
   font-size: 1rem;
   font-weight: 300;
 }
@@ -87,13 +90,13 @@ hr{
   color: #292929;
   border-left: 5px solid $primary;
 }
-.theme-bg-light{
- background:  #fafafa !important
+.theme-bg-light {
+  background: #fafafa !important;
 }
 .skill-icon {
   font-size: 1.875rem;
 }
-.skill-icon img{
+.skill-icon img {
   width: 1.875rem;
   height: 1.875rem;
 }
@@ -101,9 +104,38 @@ hr{
   font-size: 1rem;
   font-weight: bold;
 }
-.skill-desc{
-    color: #4f4f4f;
-    font-size: 0.875rem;
+.skill-desc {
+  color: #4f4f4f;
+  font-size: 0.875rem;
+}
+.menu-item {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.menu-item:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+.navbar-nav .active {
+  color: rgba(0, 0, 0, 0.5);
+}
+.toast-success {
+  background-color: $primary;
+  color: white;
+  font-size: medium;
+}
+.toast-error {
+  background-color: red;
+  color: white;
+  font-size: medium;
+}
+.footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.7rem;
+  width: 100%;
+  text-align: center;
 }
 
 //media queries
