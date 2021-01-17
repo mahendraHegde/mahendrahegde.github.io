@@ -4,7 +4,7 @@ import { CgFileDocument } from "react-icons/cg";
 import Utils from "../utils/index";
 import { SKILLS } from "../utils/dom-utils";
 import { Image, Row, Container, Col } from "react-bootstrap";
-import IconButton from "../components/IconButton";
+import IconSpinnerButton from "../components/IconSpinnerButton";
 import SectionHeader from "../components/SectionHeader";
 import Skill from "../components/Skill";
 import meImg from "../img/me2.jpg";
@@ -25,14 +25,18 @@ export default function Home() {
           <div className="bio mb-4">{DETAILS.about}</div>
           <Row className="py-3">
             <Col xs="6" md="3">
-              <IconButton to="/" icon={FaArrowAltCircleRight}>
+              <IconSpinnerButton to="/" icon={FaArrowAltCircleRight}>
                 Visit Portfolio
-              </IconButton>
+              </IconSpinnerButton>
             </Col>
             <Col xs="6" md="3">
-              <IconButton variant="secondary" icon={CgFileDocument} to="/">
+              <IconSpinnerButton
+                variant="secondary"
+                icon={CgFileDocument}
+                to="/"
+              >
                 View Resume
-              </IconButton>
+              </IconSpinnerButton>
             </Col>
           </Row>
         </Col>

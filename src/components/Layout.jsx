@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 function Layout({ children }) {
   const [loading, setLoading] = useState(true);
-  const delay = 4000;
+  const delay = 0;
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
