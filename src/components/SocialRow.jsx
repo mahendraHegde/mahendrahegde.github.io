@@ -19,6 +19,6 @@ function SocialRow({ style }) {
   );
 }
 SocialRow.propTypes = {
-  style: PropTypes.node,
+  style: PropTypes.object,
 };
 export default SocialRow;

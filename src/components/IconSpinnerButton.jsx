@@ -43,7 +43,7 @@ IconSpinnerButton.propTypes = {
   variant: PropTypes.string,
   classes: PropTypes.string,
   children: PropTypes.any,
-  icon: PropTypes.object,
+  icon: PropTypes.func,
   to: PropTypes.string,
   showSpinner: PropTypes.bool,
   spinnerText: PropTypes.string,
