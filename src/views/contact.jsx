@@ -2,9 +2,13 @@ import React from "react";
 import { Row, Container, Col, Form } from "react-bootstrap";
 import { RiMailSendLine } from "react-icons/ri";
 import { useState } from "react";
+import { useMutation } from "@apollo/client";
+
 import Toast from "../components/Toast";
 import SocialRow from "../components/SocialRow";
 import IconSpinnerButton from "../components/IconSpinnerButton";
+
+import { SEND_CONTACTUS_EMAIL } from "../utils/api/graphql/queries";
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
@@ -13,6 +17,8 @@ export default function Contact() {
   const [toastTitle, setToastTitle] = useState("");
   const [toastBody, setToastBody] = useState("");
   const [toastType, setToastType] = useState(1);
+
+  const [sendMail] = useMutation(SEND_CONTACTUS_EMAIL);
 
   const fieldNames = {
     name: "name",
@@ -39,15 +45,25 @@ export default function Contact() {
         return res;
       }, {});
 
-      setTimeout(() => {
-        console.log(body);
-        setSending(false);
-        setValidated(false);
-        form.reset();
-        displayToast({
-          body: "Thanks for contacting ME. I'll get back to you shortly",
+      sendMail({ variables: body })
+        .then(() => {
+          form.reset();
+          displayToast({
+            body: "Thanks for contacting ME. I'll get back to you shortly",
+          });
+        })
+        .catch((err) => {
+          console.error(err);
+          displayToast({
+            title: "Something is Wrong!",
+            body: "Failed to Send Email",
+            type: 0,
+          });
+        })
+        .finally(() => {
+          setSending(false);
+          setValidated(false);
         });
-      }, 3000);
     }
     setValidated(true);
   };
