@@ -10,6 +10,7 @@ function IconSpinnerButton({
   children,
   icon: Icon,
   to,
+  externalLink,
   showSpinner,
   spinnerText,
   buttonProps,
@@ -34,6 +35,13 @@ function IconSpinnerButton({
 
   if (to && to.length) {
     return <Link to={to}>{iconButton()}</Link>;
+  }
+  if (externalLink && externalLink.length) {
+    return (
+      <a href={externalLink} rel="noopener noreferrer" target="_blank">
+        {iconButton()}
+      </a>
+    );
   }
   return iconButton();
 }

@@ -138,6 +138,56 @@ hr {
   text-align: center;
 }
 
+.project-item-enter {
+  opacity: 0.01;
+  transform: scale(1.1);
+}
+.project-item-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
+}
+.project-item-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.project-item-exit-active {
+  opacity: 0.01;
+  transform: scale(1.1);
+  transition: all 300ms;
+}
+
+.project-title {
+  font-size: 1.125rem;
+  color: #292929;
+  font-weight: bold;
+}
+.project-description {
+  font-size: 0.875rem;
+  color: #292929;
+}
+
+.project-card-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(47, 47, 49, 0.6);
+  transition: all 0.3s ease-in;
+}
+.hidden {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+.visible {
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+}
+
 //media queries
 @media (max-width: 991.98px) {
   .header {

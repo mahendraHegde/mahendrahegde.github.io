@@ -17,9 +17,11 @@ import {
   FaGithub,
   FaLinkedin,
   FaFacebook,
+  FaLaptopCode,
 } from "react-icons/fa";
 import Home from "../views/home";
 import Contact from "../views/contact";
+import Portfolio from "../views/portfolio";
 
 export const MENU_ITEMS = {
   aboutMe: {
@@ -35,6 +37,13 @@ export const MENU_ITEMS = {
     link: "/contact",
     icon: SiMinutemailer,
     component: Contact,
+  },
+  portfolio: {
+    text: "Portfolio",
+    key: "portfolio",
+    link: "/portfolio",
+    icon: FaLaptopCode,
+    component: Portfolio,
   },
 };
 
