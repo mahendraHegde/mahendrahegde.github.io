@@ -1,19 +1,17 @@
 import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
-import Utils from "../utils/index";
-import { SKILLS } from "../utils/dom-utils";
+import { DETAILS } from "../utils/index";
+import { MENU_ITEMS, SKILLS } from "../utils/dom-utils";
 import { Image, Row, Container, Col } from "react-bootstrap";
 import IconSpinnerButton from "../components/IconSpinnerButton";
 import SectionHeader from "../components/SectionHeader";
 import Skill from "../components/Skill";
 import meImg from "../img/me2.jpg";
 
-const { DETAILS } = Utils;
-
 export default function Home() {
   return (
-    <Container className="py-lg-5" fluid>
+    <Container className="py-lg-5 mx-1 mb-5" fluid>
       <Row className="profile-teaser mx-lg-4 theme-bg-light">
         <Col xs="12" lg="7">
           <Row>
@@ -25,7 +23,10 @@ export default function Home() {
           <div className="bio mb-4">{DETAILS.about}</div>
           <Row className="py-3">
             <Col xs="6" md="3">
-              <IconSpinnerButton to="/" icon={FaArrowAltCircleRight}>
+              <IconSpinnerButton
+                to={MENU_ITEMS.portfolio.link}
+                icon={FaArrowAltCircleRight}
+              >
                 Visit Portfolio
               </IconSpinnerButton>
             </Col>

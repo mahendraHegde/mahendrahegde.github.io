@@ -2,11 +2,10 @@ import React from "react";
 import { Image, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 // import PropTypes from "prop-types";
-import utils from "../../utils";
+import { DETAILS } from "../../utils";
 import { MENU_ITEMS } from "../../utils/dom-utils";
 import meImg from "../../img/me.jpg";
 import SocialRow from "../SocialRow";
-const { DETAILS } = utils;
 const Sidebar = () => {
   const { pathname } = useLocation();
   return (
