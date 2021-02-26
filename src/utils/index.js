@@ -1,5 +1,3 @@
-import hegdeflutes from "../img/hegdeflutes.png";
-import aphasia from "../img/aphasia.png";
 import share from "../img/share.png";
 
 export const THEME = {
@@ -54,7 +52,8 @@ export const PROJECTS = [
       PROJECT_CATEGORIES.all,
     ],
     tags: [PROJECT_TAGS.node, PROJECT_TAGS.react, PROJECT_TAGS.golang],
-    imageUrl: hegdeflutes,
+    imageUrl:
+      "https://images.ctfassets.net/9bgxhe7x664p/27zEFSIrUUyDshG3LZmhHj/295722def2c8e78e7e529655405f5bee/hegdeflutes.0214fc8e.png?w=480&h=480&fit=fill",
   },
   {
     title: "Aphasia App",
@@ -66,7 +65,8 @@ export const PROJECTS = [
       PROJECT_CATEGORIES.mobileApp,
       PROJECT_CATEGORIES.all,
     ],
-    imageUrl: aphasia,
+    imageUrl:
+      "https://images.ctfassets.net/9bgxhe7x664p/3KNZaZQfwY8jkNwmHOPEwV/01579236e484c80bb9e7975e2c5668c1/aphasia.cee0479b.png?w=480&h=480&fit=fill",
     tags: [PROJECT_TAGS.java],
   },
   {
@@ -93,7 +93,7 @@ export const PROJECTS = [
       PROJECT_TAGS.openSource,
     ],
     imageUrl:
-      "https://camo.githubusercontent.com/138e654f00bdc93effe2b3a474ebe85f0448671f7ceed6b37ef7ca0c651be993/68747470733a2f2f692e696d6775722e636f6d2f4739427149486c2e706e67",
+      "//images.ctfassets.net/9bgxhe7x664p/1A6ma9mbnhQ4rxKsmte9GW/0717be2744d6a8bbeb44b01e0ce5df67/convert.png?w=480&h=480&fit=fill",
   },
   {
     title: "Check-It-Out",
@@ -106,7 +106,7 @@ export const PROJECTS = [
     ],
     tags: [PROJECT_TAGS.node, PROJECT_TAGS.openSource],
     imageUrl:
-      "https://raw.githubusercontent.com/jwu910/check-it-out/master/assets/images/checkit-intro.gif",
+      "https://images.ctfassets.net/9bgxhe7x664p/7yuR6ggPg8zutvkhmkNz59/7174466fb2f6a21a4f48c4dcb7d84593/checkit-intro.gif?w=480&h=480&fit=fill",
   },
   {
     title: "Deer",
@@ -124,6 +124,6 @@ export const PROJECTS = [
       PROJECT_TAGS.openSource,
     ],
     imageUrl:
-      "https://raw.githubusercontent.com/abahmed/Deer/master/app/assets/images/deer-demo.gif",
+      "https://images.ctfassets.net/9bgxhe7x664p/F7uv0cskATPZ6zd7zB7Nx/28cd270b0bbc2cbd3a30bf9c0d808559/deer-demo.gif?w=480&h=480&fit=fill",
   },
 ];
