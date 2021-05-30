@@ -35,6 +35,7 @@ export default function Home() {
                 variant="secondary"
                 icon={CgFileDocument}
                 to="/"
+                buttonProps={{ onClick: () => alert(`No code written yet 😜`) }}
               >
                 View Resume
               </IconSpinnerButton>
