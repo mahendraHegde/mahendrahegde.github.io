@@ -1,4 +1,5 @@
 import share from "../img/share.png";
+import { GrStorage } from "react-icons/gr";
 
 export const THEME = {
   color: {
@@ -23,6 +24,7 @@ export const PROJECT_CATEGORIES = {
   webApp: "Web App",
   desktop: "Desktop App",
   cli: "CLI",
+  libraries: "Libraries",
 };
 
 export const PROJECT_TAGS = {
@@ -125,5 +127,14 @@ export const PROJECTS = [
     ],
     imageUrl:
       "https://images.ctfassets.net/9bgxhe7x664p/F7uv0cskATPZ6zd7zB7Nx/28cd270b0bbc2cbd3a30bf9c0d808559/deer-demo.gif?w=480&h=480&fit=fill",
+  },
+  {
+    title: "Abstract cache redis",
+    description: `[Open Source Contribution] abstract-cache-redis module provides a redis cache client that is compliant with the abstract-cache protocol`,
+    github:
+      "https://github.com/jsumners/abstract-cache-redis/pulls?q=is%3Apr+author%3AmahendraHegde",
+    categories: [PROJECT_CATEGORIES.libraries, PROJECT_CATEGORIES.all],
+    tags: [PROJECT_TAGS.node, PROJECT_TAGS.openSource],
+    icon: GrStorage,
   },
 ];

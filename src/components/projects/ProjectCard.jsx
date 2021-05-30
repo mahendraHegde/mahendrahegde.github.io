@@ -4,7 +4,7 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import { FaEye } from "react-icons/fa";
 import IconSpinnerButton from "../IconSpinnerButton";
 const ProjectCard = ({
-  projectData: { title, imageUrl, description, link, github },
+  projectData: { title, imageUrl, description, link, icon: Icon, github },
 }) => {
   const [overlayVisible, setOverlayVisible] = useState(false);
   return (
@@ -15,7 +15,11 @@ const ProjectCard = ({
         onMouseLeave={() => setOverlayVisible(false)}
       >
         <Col className="d-flex h-100 align-items-center" xs={5}>
-          <Image fluid src={imageUrl} />
+          {imageUrl ? (
+            <Image fluid src={imageUrl} />
+          ) : (
+            <Icon style={{ fontSize: 100 }} />
+          )}
         </Col>
         <Col className="h-100 d-flex align-items-center" xs={7}>
           <Row>
