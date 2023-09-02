@@ -9,4 +9,3 @@ render(
   </HashRouter>,
   document.getElementById("root")
 );
-console.log(`baseName = ${process.env.PUBLIC_URL}`);

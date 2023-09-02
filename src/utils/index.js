@@ -11,9 +11,9 @@ export const DETAILS = {
   name: "Mahendra Hegde",
   designation: "Software Engineer",
   shrotAbout: `Hi, my name is Mahendra Hegde and I'm a Software Engineer. Welcome to my personal website!`,
-  about: `I'm a software engineer specialised in frontend and backend development for complex scalable web apps. Would like to know how I may help your project? Check out my project portfolio and online resume.`,
-  intro: `I have more than 3 years' experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my online resume and project portfolio.`,
-  portfolio: `Welcome to my online portfolio. Some of my work are given below. I'm taking on freelance work at the moment. Want some help building your software?`,
+  about: `I'm a software engineer specialised in fullstack development, event driven micro service architecture and sql & nosql databases . Would like to know how I may help your project? Check out my project portfolio and online resume.`,
+  intro: `I have more than 6 years' experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my online resume and project portfolio.`,
+  portfolio: `Welcome to my online portfolio. Some of my work are given below. I'd love to connect and see how I can help you?`,
 };
 
 export const PROJECT_CATEGORIES = {
@@ -40,9 +40,26 @@ export const PROJECT_TAGS = {
   electron: {
     title: "Electron",
   },
+  ionic: {
+    title: "Ionic/Capacitor",
+  },
 };
 
 export const PROJECTS = [
+  {
+    title: "Dandelion",
+    description: `Dating app to date with intent, Dating app launched in NYC where every hello matters.`,
+    link: "https://www.dandeliondating.com/",
+    categories: [
+      PROJECT_CATEGORIES.backend,
+      PROJECT_CATEGORIES.frontend,
+      PROJECT_CATEGORIES.mobileApp,
+      PROJECT_CATEGORIES.webApp,
+      PROJECT_CATEGORIES.all,
+    ],
+    tags: [PROJECT_TAGS.node, PROJECT_TAGS.react, PROJECT_TAGS.ionic],
+    imageUrl: "https://www.dandeliondating.com/assets/landing-hero.jpg",
+  },
   {
     title: "HegdeFlutes",
     description: `Hegdeflutes is a profession portfolio and flutes selling website built for Mr. Guruprasad Hegde.`,

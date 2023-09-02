@@ -1,9 +1,11 @@
 import { IoIosContact } from "react-icons/io";
 import {
   SiMinutemailer,
-  SiJavascript,
   SiKubernetes,
   SiGmail,
+  SiGooglecalendar,
+  SiIonic,
+  SiTypescript,
 } from "react-icons/si";
 import {
   FaNodeJs,
@@ -16,8 +18,8 @@ import {
   FaSass,
   FaGithub,
   FaLinkedin,
-  FaFacebook,
   FaLaptopCode,
+  FaAws,
 } from "react-icons/fa";
 import Home from "../views/home";
 import Contact from "../views/contact";
@@ -51,23 +53,52 @@ export const SKILLS = [
   {
     icons: [
       {
-        color: "#F1DE4F",
-        icon: SiJavascript,
+        color: "#3178c6",
+        icon: SiTypescript,
       },
     ],
-    title: "Vanilla JavaScript",
-    desc: "Having strong work experience on Vanilla Javascript including es6",
+    title: "Typescript & JavaScript",
+    desc: "Having strong work experience on es6 Javascript and Typescript",
   },
   {
     icons: [{ color: "#54B689", icon: FaNodeJs }],
     title: "Node.js & Golang",
-    desc:
-      "Having strong work experience and knowledge of building server side solutions using Node.js Golang",
+    desc: "Having strong work experience and knowledge of building server side solutions using Node.js Golang",
+  },
+  {
+    icons: [{ icon: FaAws, color: "#ea7158" }],
+    title: "AWS & GCP",
+    desc: "I have built my modern backends on both AWS & GCP",
+  },
+  {
+    icons: [{ icon: FaDocker, color: "#0db7ed" }],
+    title: "Docker",
+    desc: "Source code will be containerised during both development and deployment so that platform descrepencies are not a problem for me.",
+  },
+  {
+    icons: [{ icon: SiKubernetes, color: "#00f" }],
+    title: "Kubernetes",
+    desc: "I use Kubernetes to sail in the ocean of Microservices.",
+  },
+  {
+    icons: [{ icon: FaGitSquare, color: "#f1502f" }],
+    title: "GIT",
+    desc: "Every project uses GIT version control so that rollback and code management is gonna be easy",
+  },
+  {
+    icons: [{ icon: FaGitlab, color: "#FC6D27" }],
+    title: "Gitlab",
+    desc: "I achieve continuous integration and continuous deployment with gitlab",
   },
   {
     icons: [{ icon: FaReact, color: "#62D4FA" }],
     title: "React",
     desc: "Have been building front-end solution using React.js",
+  },
+  {
+    icons: [{ icon: SiIonic, color: "#5468ff" }],
+    title: "Ionic & Capacitor",
+    desc: "I can build cross platform mobile apps with capacitor",
   },
   {
     icons: [
@@ -76,31 +107,7 @@ export const SKILLS = [
       { color: "#BF6B97", icon: FaSass },
     ],
     title: "HTML5 & CCS3(Sass & Scss)",
-    desc:
-      "Extensively worked on HTML, css and other css preprocessors to build user friendly websites",
-  },
-  {
-    icons: [{ icon: FaGitSquare, color: "#f1502f" }],
-    title: "GIT",
-    desc:
-      "Every project uses GIT version control so that rollback and code management is gonna be easy",
-  },
-  {
-    icons: [{ icon: FaDocker, color: "#0db7ed" }],
-    title: "Docker",
-    desc:
-      "Source code will be containerised during both development and deployment so that platform descrepencies are not a problem for me.",
-  },
-  {
-    icons: [{ icon: SiKubernetes, color: "#00f" }],
-    title: "Kubernetes",
-    desc: "I use Kubernetes to sail in the ocean of Microservices.",
-  },
-  {
-    icons: [{ icon: FaGitlab, color: "#FC6D27" }],
-    title: "Gitlab",
-    desc:
-      "I achieve continuous integration and continuous deployment with gitlab",
+    desc: "Extensively worked on HTML, css and other css preprocessors to build user friendly websites",
   },
 ];
 const SOCIAL_ICON_SIZE = 20;
@@ -120,16 +127,16 @@ export const SOCIAL_MEDIA = {
     },
   },
   gmail: {
-    link: "mailto:hegdemahendra9@gmail.com",
+    link: "mailto:hegdemahendra8@gmail.com",
     icon: {
       Icon: SiGmail,
       style: { color: "#D44638", fontSize: SOCIAL_ICON_SIZE },
     },
   },
-  fb: {
-    link: "https://www.facebook.com/hegdemahendra9/",
+  cal: {
+    link: "https://cal.com/mahendra-hegde",
     icon: {
-      Icon: FaFacebook,
+      Icon: SiGooglecalendar,
       style: { color: "#3b5998", fontSize: SOCIAL_ICON_SIZE },
     },
   },

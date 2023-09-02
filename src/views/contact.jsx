@@ -1,72 +1,79 @@
 import React from "react";
-import { Row, Container, Col, Form } from "react-bootstrap";
-import { RiMailSendLine } from "react-icons/ri";
-import { useState } from "react";
-import { useMutation } from "@apollo/client";
-
-import Toast from "../components/Toast";
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
+import { Row, Container, Col } from "react-bootstrap";
 import SocialRow from "../components/SocialRow";
-import IconSpinnerButton from "../components/IconSpinnerButton";
-
-import { SEND_CONTACTUS_EMAIL } from "../utils/api/graphql/queries";
 
 export default function Contact() {
-  const [validated, setValidated] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [showToast, setShowToast] = useState(false);
-  const [toastTitle, setToastTitle] = useState("");
-  const [toastBody, setToastBody] = useState("");
-  const [toastType, setToastType] = useState(1);
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        styles: {
+          branding: { brandColor: "#20c997" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
 
-  const [sendMail] = useMutation(SEND_CONTACTUS_EMAIL);
+  // const [validated, setValidated] = useState(false);
+  // const [sending, setSending] = useState(false);
+  // const [showToast, setShowToast] = useState(false);
+  // const [toastTitle, setToastTitle] = useState("");
+  // const [toastBody, setToastBody] = useState("");
+  // const [toastType, setToastType] = useState(1);
 
-  const fieldNames = {
-    name: "name",
-    email: "email",
-    subject: "subject",
-    detail: "detail",
-  };
+  // const [sendMail] = useMutation(SEND_CONTACTUS_EMAIL);
 
-  const displayToast = ({ title = "Success", body, type = 1, show = true }) => {
-    setShowToast(show);
-    setToastBody(body);
-    setToastTitle(title);
-    setToastType(type);
-  };
+  // const fieldNames = {
+  //   name: "name",
+  //   email: "email",
+  //   subject: "subject",
+  //   detail: "detail",
+  // };
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    event.preventDefault();
-    event.stopPropagation();
-    if (form.checkValidity() === true) {
-      setSending(true);
-      const body = Object.values(fieldNames).reduce((res, curr) => {
-        res[curr] = form[curr].value;
-        return res;
-      }, {});
+  // const displayToast = ({ title = "Success", body, type = 1, show = true }) => {
+  //   setShowToast(show);
+  //   setToastBody(body);
+  //   setToastTitle(title);
+  //   setToastType(type);
+  // };
 
-      sendMail({ variables: body })
-        .then(() => {
-          form.reset();
-          displayToast({
-            body: "Thanks for contacting ME. I'll get back to you shortly",
-          });
-        })
-        .catch((err) => {
-          console.error(err);
-          displayToast({
-            title: "Something is Wrong!",
-            body: "Failed to Send Email",
-            type: 0,
-          });
-        })
-        .finally(() => {
-          setSending(false);
-          setValidated(false);
-        });
-    }
-    setValidated(true);
-  };
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   if (form.checkValidity() === true) {
+  //     setSending(true);
+  //     const body = Object.values(fieldNames).reduce((res, curr) => {
+  //       res[curr] = form[curr].value;
+  //       return res;
+  //     }, {});
+
+  //     sendMail({ variables: body })
+  //       .then(() => {
+  //         form.reset();
+  //         displayToast({
+  //           body: "Thanks for contacting ME. I'll get back to you shortly",
+  //         });
+  //       })
+  //       .catch((err) => {
+  //         console.error(err);
+  //         displayToast({
+  //           title: "Something is Wrong!",
+  //           body: "Failed to Send Email",
+  //           type: 0,
+  //         });
+  //       })
+  //       .finally(() => {
+  //         setSending(false);
+  //         setValidated(false);
+  //       });
+  //   }
+  //   setValidated(true);
+  // };
 
   return (
     <>
@@ -81,9 +88,9 @@ export default function Contact() {
             <Row>
               <Col>
                 <div className="bio mb-1 text-center">
-                  Interested in hiring me for your project or just want to say
-                  hi? You can fill in the contact form below, i&apos;ll get in
-                  touch with you shortly.
+                  Interested to work with or understand how i can solve your
+                  problem? You can either contact me on below social platforms
+                  or directly schedule a meet.
                 </div>
               </Col>
             </Row>
@@ -103,7 +110,7 @@ export default function Contact() {
         </Row>
       </Container>
       <Container className="p-5" fluid>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        {/* <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Form.Row className="justify-content-center">
             <Form.Group as={Col} md="5" controlId="validationCustom01">
               <Form.Label>Name</Form.Label>
@@ -164,13 +171,22 @@ export default function Contact() {
               send
             </IconSpinnerButton>
           </Form.Row>
-        </Form>
-        <Toast
+        </Form> */}
+        {/* <Toast
           title={toastTitle}
           show={showToast}
           setShowToast={setShowToast}
           body={toastBody}
           type={toastType}
+        /> */}
+        <Cal
+          calLink="mahendra-hegde/30min"
+          style={{ width: "100%", height: "100%", overflow: "scroll" }}
+          config={{
+            layout: "month_view",
+            name: "your name?",
+            email: "your email?",
+          }}
         />
       </Container>
     </>

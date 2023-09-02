@@ -55,4 +55,6 @@ IconSpinnerButton.propTypes = {
   to: PropTypes.string,
   showSpinner: PropTypes.bool,
   spinnerText: PropTypes.string,
+  externalLink: PropTypes.string,
+  buttonProps: PropTypes.any,
 };

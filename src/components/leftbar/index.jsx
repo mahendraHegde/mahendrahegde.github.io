@@ -9,7 +9,7 @@ import SocialRow from "../SocialRow";
 const Sidebar = () => {
   const { pathname } = useLocation();
   return (
-    <header className="header text-center">
+    <header style={{ minHeight: "100%" }} className="header text-center">
       <Link style={{ color: "inherit" }} to="/">
         <h3 className="mt-3"> {DETAILS.name}</h3>
       </Link>

@@ -27,7 +27,7 @@ export default function Home() {
                 to={MENU_ITEMS.portfolio.link}
                 icon={FaArrowAltCircleRight}
               >
-                Visit Portfolio
+                Portfolio
               </IconSpinnerButton>
             </Col>
             <Col xs="6" md="3">
@@ -35,9 +35,16 @@ export default function Home() {
                 variant="secondary"
                 icon={CgFileDocument}
                 to="/"
-                buttonProps={{ onClick: () => alert(`No code written yet 😜`) }}
+                buttonProps={{
+                  onClick: () =>
+                    window.open(
+                      "https://drive.google.com/file/d/1nErKwcVe1kICSJrOS9ZKc8Xf2kl3XLsY/view?usp=drive_link",
+                      "_blank",
+                      "noopener,noreferrer"
+                    ),
+                }}
               >
-                View Resume
+                Resume
               </IconSpinnerButton>
             </Col>
           </Row>

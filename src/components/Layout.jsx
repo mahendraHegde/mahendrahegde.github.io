@@ -6,8 +6,8 @@ import WIP from "./WIP";
 import Footer from "./Footer";
 
 function Layout({ children }) {
-  const [loading, setLoading] = useState(true);
-  const delay = 4000;
+  const [loading, setLoading] = useState(false);
+  const delay = 0;
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
